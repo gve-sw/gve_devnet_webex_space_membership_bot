@@ -1,0 +1,9 @@
+    <!--Helper Template: Alert for error message-->
+    {% if error == True %}
+        <div class="alert alert--danger" role="alert">
+            <div class="alert__icon icon-error-outline"></div>
+            <div class="alert__message">
+                {{ errormessage }} {% if errorcode %} (Error code:{{ errorcode }}) {% endif %}
+            </div>
+        </div>
+    {% endif %}

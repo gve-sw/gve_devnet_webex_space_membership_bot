@@ -1,0 +1,27 @@
+{% extends "masterPage.html" %}
+
+{% block content %}
+<script>
+  setTimeout(function() {window.location.reload()}, 12 * 60 * 60 * 1000)
+</script>
+
+<h3>Added Members</h3>
+<ul>
+  {% for member in member_struct.added %}
+  <li style="list-style: none;">{{ member.name }} added to {{ member.room }}</li>
+  {% endfor %}
+</ul>
+
+<br>
+
+<h3>Removed Members</h3>
+<ul>
+  {% for member in member_struct.removed %}
+  <li style="list-style: none;">{{ member.name }} removed from {{ member.room }}</li>
+  {% endfor %}
+</ul>
+
+<br>
+
+<p>Updated at {{ update_time }}</p>
+{% endblock %}

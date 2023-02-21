@@ -1,0 +1,57 @@
+<!-- This login page offers various input field to gather global information like API Keys,
+    login name or password in advance of starting the demo.-->
+
+    {% extends "masterPage.html" %}
+
+    {% block content %}
+    <div class="row">
+            <!-- Left Rail -->
+            <div class="col-xl-3 col-md-3">
+            </div>
+
+            <!-- Middle Rail -->
+            <div class="col-xl-6 col-md-6">
+                <div class="section" >
+                    <div class="panel panel--loose panel--raised base-margin-bottom">
+                        <div class="section">
+
+                            <!-- OPTIONAL: Replace with Customer Logo -->
+                            <div class="flex flex-center" style="margin-bottom:20px;">
+                                <h3 style="padding-top: 10px; padding-left: 20px">Webex Space Membership Automation</h3>
+                            </div>
+
+                            <!--OPTIONAL: Info alert e.g. about required preconfigurations-->
+                            <div class="alert alert--info">
+                                <div class="alert__icon icon-info-outline"></div>
+                                <div class="alert__message">
+                                    <!--CUSTOMIZE-->
+                                    Sign in with your account. For licensed users, you will login via Webex. 
+                                    <!--CUSTOMIZE END-->
+                                </div>
+                            </div>
+
+                            <!--CUSTOMIZE: Text field section: Add or remove elements as needed.-->
+
+                            <div class="flex flex-center form-group base-margin-bottom">
+                                <a href="/spacememberships"> <!-- Alvin: OAuth Redirect before landing on paid user main page -->
+                                    <input id="paid-user-login" class="btn btn-primary" type="submit" value="Click to Login">
+                                </a>
+                            </div>
+
+
+                                <!--CUSTOMIZE END-->
+
+
+                        <!--Alert for error message-->
+                            <!--PASS INFO: Pass the following information to the template: error=True/False ; errormessage="xxx" ; errorcode=xxx-->
+                            {% include "alert.html" %}
+
+                    </div>
+                </div>
+            </div>
+
+        <!-- Right Rail -->
+        <div class="col-xl-3 col-md-3">
+        </div>
+    </div>
+    {%  endblock %}
